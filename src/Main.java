@@ -9,7 +9,18 @@ public class Main {
         Random randomNumber = new Random();
         int computerRandon = randomNumber.nextInt(100);
 
+        int counter = 0;
+
+        System.out.println("You are allowed 7 attempts to Guess a number between 0-100.\n Good luck!\n");
+
         while (true) {
+
+            if (counter == 7) {
+
+                System.out.println("\nComputer Win!");
+                System.out.printf("Computer number: %d",computerRandon);
+                break;
+            }
 
             System.out.println("Guess a number (0-100): ");
 
@@ -20,8 +31,11 @@ public class Main {
             for (int i = 0; i < playerInput.length(); i++) {
                 if (playerInput.charAt(i) < 48 || playerInput.charAt(i) > 57) {
                     isValid = false;
-                    System.out.println("Invalid input.. Try again!");
                 }
+            }
+
+            if (!isValid) {
+                System.out.println("Invalid input.. Try again!");
             }
 
             if (isValid) {
@@ -36,6 +50,7 @@ public class Main {
                     System.out.println("Too high!");
                 }
 
+                counter++;
             }
 
         }
