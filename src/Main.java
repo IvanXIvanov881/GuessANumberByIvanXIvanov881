@@ -11,18 +11,37 @@ public class Main {
 
         while (true) {
             System.out.println("Guess a number (0-100): ");
-            String playerInput = scanner.nextLine();
-            int playerNumber;
+
+            String playerInput = scanner.next();
 
             boolean isValid = true;
 
             for (int i = 0; i < playerInput.length(); i++) {
-
                 if (playerInput.charAt(i) < 48 || playerInput.charAt(i) > 57) {
                     isValid = false;
-                    break;
+                    System.out.println("Invalid input.. Try again!");
+                } else {
+
                 }
+
             }
+
+            if (isValid) {
+                int playerNumber = Integer.parseInt(playerInput);
+
+                if (playerNumber == computerRandon) {
+                    System.out.println("You Win!");
+                    break;
+                } else if (playerNumber < computerRandon) {
+                    System.out.println("Too low!");
+                } else if (playerNumber > computerRandon) {
+                    System.out.println("Too high!");
+                }
+
+
+            }
+
+
 
         }
 
