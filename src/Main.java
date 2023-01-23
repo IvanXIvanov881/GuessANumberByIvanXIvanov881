@@ -10,6 +10,7 @@ public class Main {
         int computerRandon = randomNumber.nextInt(100);
 
         while (true) {
+
             System.out.println("Guess a number (0-100): ");
 
             String playerInput = scanner.next();
@@ -20,10 +21,7 @@ public class Main {
                 if (playerInput.charAt(i) < 48 || playerInput.charAt(i) > 57) {
                     isValid = false;
                     System.out.println("Invalid input.. Try again!");
-                } else {
-
                 }
-
             }
 
             if (isValid) {
@@ -38,10 +36,7 @@ public class Main {
                     System.out.println("Too high!");
                 }
 
-
             }
-
-
 
         }
 
